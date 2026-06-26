@@ -3,72 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja de Vida</title>
+    <title>CV - Diana Patricia Navarro Tovar</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Variables de color para fácil personalización */
+        :root {
+            --primary-color: #1e293b; /* Azul oscuro profesional */
+            --secondary-color: #0f766e; /* Azul verdoso para detalles */
+            --text-color: #334155; /* Gris oscuro para lectura cómoda */
+            --bg-color: #f8fafc; /* Fondo general claro */
+            --card-bg: #ffffff; /* Fondo de secciones */
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 800px;
-            background: white;
-            padding: 20px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
         }
-        h1, h2 {
-            color: #333;
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .section {
-            margin-bottom: 20px;
+
+        /* Encabezado Principal */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            text-align: center;
         }
-        .contacto, .experiencia, .educacion, .habilidades {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Información de Contacto */
+        .contact-info {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cuerpo del CV */
+        .main-content {
+            padding: 2.5rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Estilos de Experiencia y Educación */
+        .timeline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item h3 {
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .timeline-item .meta {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            font-style: italic;
+        }
+
+        /* Listas e Ítems */
+        ul {
+            list-style-type: none;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-list li {
+            background-color: #f8fafc;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+        }
+
+        .lang-list li {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Responsividad */
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+            }
+            .cv-container {
+                border-radius: 0;
+                box-shadow: none;
+            }
+            header {
+                padding: 2rem 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .main-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Nombre Completo</h1>
-        <p><strong>Profesión:</strong> Tu profesión</p>
+
+    <div class="cv-container">
         
-        <div class="section contacto">
-            <h2>Contacto</h2>
-            <p><strong>Teléfono:</strong> +57 123 456 7890</p>
-            <p><strong>Email:</strong> correo@ejemplo.com</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/tuusuario</p>
+        <!-- Encabezado -->
+        <header>
+            <h1>Diana Patricia Navarro Tovar</h1>
+            <div class="subtitle">Analista y Desarrolladora de Software</div>
+        </header>
+
+        <!-- Barra de Contacto -->
+        <div class="contact-info">
+            <a href="mailto:navatosolucion@gmail.com">
+                📧 navatosolucion@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+                🔗 LinkedIn Profesional
+            </a>
         </div>
 
-        <div class="section experiencia">
-            <h2>Experiencia Laboral</h2>
-            <p><strong>Empresa XYZ</strong> (2020 - Actualidad)</p>
-            <p>Puesto ocupado y descripción breve.</p>
-            
-            <p><strong>Empresa ABC</strong> (2018 - 2020)</p>
-            <p>Puesto ocupado y descripción breve.</p>
-        </div>
+        <!-- Contenido Principal -->
+        <div class="main-content">
 
-        <div class="section educacion">
-            <h2>Educación</h2>
-            <p><strong>Universidad Ejemplo</strong> (2014 - 2018)</p>
-            <p>Título obtenido.</p>
-        </div>
+            <!-- Experiencia Laboral -->
+            <section>
+                <h2>🏢 Experiencia Laboral</h2>
+                
+                <div class="timeline-item">
+                    <h3>SENA</h3>
+                    <p class="meta">Contrato de Aprendizaje</p>
+                </div>
 
-        <div class="section habilidades">
-            <h2>Habilidades</h2>
-            <ul>
-                <li>Habilidad 1</li>
-                <li>Habilidad 2</li>
-                <li>Habilidad 3</li>
-            </ul>
+                <div class="timeline-item">
+                    <h3>Supervisora de Tiendas ARA</h3>
+                    <p class="meta">Año 2017</p>
+                </div>
+            </section>
+
+            <!-- Educación -->
+            <section>
+                <h2>🎓 Educación y Cursos</h2>
+                <div class="timeline-item">
+                    <h3>SENA (Servicio Nacional de Aprendizaje)</h3>
+                    <p class="meta">Formaciones y Certificaciones:</p>
+                    <ul class="grid-list" style="margin-top: 0.75rem;">
+                        <li>Administración Documental en el Entorno Laboral</li>
+                        <li>Emprendimiento y Empresarismo</li>
+                        <li>Cátedra Virtual de Pensamiento Empresarial (Mód. I: Mentalidad Empresarial)</li>
+                        <li>Novedades y Liquidación en Seguridad Social Integral</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section>
+                <h2>💡 Habilidades</h2>
+                <ul class="grid-list">
+                    <li>Trabajo en Equipo</li>
+                    <li>Gestión y Organización Digital</li>
+                    <li>Capacidad de Análisis y Requisitos</li>
+                </ul>
+            </section>
+
+            <!-- Idiomas -->
+            <section>
+                <h2>🌐 Idiomas</h2>
+                <ul class="lang-list">
+                    <li><strong>Español:</strong> Nativo</li>
+                    <li><strong>Inglés:</strong> En estudio / En desarrollo</li>
+                </ul>
+            </section>
+
         </div>
     </div>
+
 </body>
-    
-<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/04/05/02/20250405021404-CM8Q1FN6.js"></script>
-    
 </html>
