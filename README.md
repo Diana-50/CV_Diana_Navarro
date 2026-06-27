@@ -29,7 +29,7 @@
 
 - ## 🌐 Idiomas
 - **Español:** Nativo
-- **Inglés:** Estudiando 
+- **Inglés:** Estudiando y aprendiendo 
 
 ---
 
